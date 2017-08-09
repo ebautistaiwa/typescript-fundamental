@@ -5,8 +5,13 @@ interface GenerateConfig {
     length: number, 
 }
 
-function generateRandomId(options: GenerateConfig): string {
-    return options.symbol + Math.random().toString(36).substr(2, options.length)
+function generateRandomId(optionsOrSymbol): string {
+    if(typeof optionsOrSymbol === 'string'){
+        return optionsOrSymbol + Math.random().toString(36).substr(2, length)
+    }
+    return optionsOrSymbol
+.symbol + Math.random().toString(36).substr(2, optionsOrSymbol
+    .length)
 }
 
 function main() {
