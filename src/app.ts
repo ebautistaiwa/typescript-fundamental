@@ -1,22 +1,4 @@
-type ValidSymbol = '#' | '$'
-
-interface GenerateConfig { 
-    symbol: ValidSymbol, 
-    length: number, 
-}
-
-function identity<T>(arg: T): T{
-    return arg;
-}
-
-function generateRandomId(symbol: ValidSymbol, length: number)
-function generateRandomId(options: GenerateConfig): string
-function generateRandomId(optionsOrSymbol: GenerateConfig | ValidSymbol): string {
-    if(typeof optionsOrSymbol === 'string'){
-        return optionsOrSymbol + Math.random().toString(36).substr(2, length)
-    }
-    return optionsOrSymbol.symbol + Math.random().toString(36).substr(2, optionsOrSymbol.length)
-}
+import { generateRandomId } from './utils'
 
 function main() {
     var app = document.getElementById('app')
