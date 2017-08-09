@@ -5,6 +5,10 @@ interface GenerateConfig {
     length: number, 
 }
 
+function identity<T>(arg: T): T{
+    return arg;
+}
+
 function generateRandomId(symbol: ValidSymbol, length: number)
 function generateRandomId(options: GenerateConfig): string
 function generateRandomId(optionsOrSymbol: GenerateConfig | ValidSymbol): string {
