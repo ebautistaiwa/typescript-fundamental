@@ -1,4 +1,5 @@
-var symbol: string = '#'
+type ValidSymbol = '#' | '$'
+const symbol: ValidSymbol = '$'
 var length: number = 7
 
 function generateRandomId() {
