@@ -5,13 +5,13 @@ interface GenerateConfig {
     length: number, 
 }
 
-function generateRandomId(optionsOrSymbol): string {
+function generateRandomId(symbol: ValidSymbol, length: number)
+function generateRandomId(options: GenerateConfig): string
+function generateRandomId(optionsOrSymbol: GenerateConfig | ValidSymbol): string {
     if(typeof optionsOrSymbol === 'string'){
         return optionsOrSymbol + Math.random().toString(36).substr(2, length)
     }
-    return optionsOrSymbol
-.symbol + Math.random().toString(36).substr(2, optionsOrSymbol
-    .length)
+    return optionsOrSymbol.symbol + Math.random().toString(36).substr(2, optionsOrSymbol.length)
 }
 
 function main() {
