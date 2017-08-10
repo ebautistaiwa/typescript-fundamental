@@ -1,15 +1,11 @@
 import { generateRandomId } from './utils'
 
 class App {
-    id: string
-    constructor() {
-        this.id = 'app'
-    }
+    static id = 'app'
 }
 
 function main(ComponentClass) {
-    const cmp = new ComponentClass();
-    var app = document.getElementById(cmp.id)
+    var app = document.getElementById(ComponentClass.id)
     setInterval(function() {
         if(app) {
             app.innerHTML = generateRandomId({

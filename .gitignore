@@ -1,4 +1,4 @@
 yarn.lock
 .DS_Store
-dist/app.js
+dist/
 node_modules/
