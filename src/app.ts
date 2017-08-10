@@ -1,13 +1,15 @@
-import { generateRandomId } from './utils'
+import { generateRandomId, Component } from './utils'
 
-function Component(options: {id: string}){
-    return (target) => {
-        target.id = options.id
-    }
+function enumerable(isEnumerable){
+    return (target, propertyKey, propertyDescriptor: PropertyDescriptor) =>
+        {
+            propertyDescriptor.enumerable = isEnumerable
+        }
 }
 
 @Component({id: 'app'})
 class App {
+    @enumerable(false)
     onInit(el: HTMLElement | null): void {
         setInterval(function() {
             if(el) {
