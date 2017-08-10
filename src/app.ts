@@ -1,6 +1,10 @@
 import { generateRandomId } from './utils'
 
-class App {
+interface Component {
+    onInit(el: HTMLElement | null)
+}
+
+class App implements Component {
     static id = 'app'
 
     onInit(el: HTMLElement | null): void {
