@@ -1,7 +1,15 @@
 import { generateRandomId } from './utils'
 
-function main() {
-    var app = document.getElementById('app')
+class App {
+    id: string
+    constructor() {
+        this.id = 'app'
+    }
+}
+
+function main(ComponentClass) {
+    const cmp = new ComponentClass();
+    var app = document.getElementById(cmp.id)
     setInterval(function() {
         if(app) {
             app.innerHTML = generateRandomId({
@@ -12,4 +20,4 @@ function main() {
     }, 1000)
 }
 
-main()
+main(App)
